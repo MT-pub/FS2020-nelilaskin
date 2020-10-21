@@ -85,7 +85,11 @@ const yhtaKuin = () => {
 }
 
 const toimitin = (laskuToimitus) => {
-  yhtaKuin()
+  if(toimitus!=='='||toimitus!==''){
+    yhtaKuin()
+  } else {
+    setEdellinen(luku)
+  }
   setLuku(0)
   setToimitus(laskuToimitus)
 }
