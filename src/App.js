@@ -17,6 +17,7 @@ const numeroNappi = (numero) => {
   if(toimitus==='='){
     setToimitus('')
     setLuku(parseFloat(numero))
+    setEdellinen(0)
   }
   else if(toimitus==='.') {
     setLuku(parseFloat(luku + '.' + numero))
@@ -85,9 +86,9 @@ const yhtaKuin = () => {
 }
 
 const toimitin = (laskuToimitus) => {
-  if(toimitus!=='='||toimitus!==''){
+  if(toimitus!=='='&&toimitus!==''){
     yhtaKuin()
-  } else {
+  } else if(toimitus!=='='){
     setEdellinen(luku)
   }
   setLuku(0)
